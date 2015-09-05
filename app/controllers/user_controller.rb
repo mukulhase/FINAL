@@ -9,6 +9,12 @@ class UserController < ApplicationController
   def update
   end
 
+  #Return list of projects
+  def project_list
+    @user = User.find(params[:id])
+    render :json => @user.projects
+  end
+
   def edit
   end
 

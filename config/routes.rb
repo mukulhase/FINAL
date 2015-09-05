@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get 'user_controller/update'
 
+  get 'user/:id' => 'user#project_list'
   get 'user_controller/edit'
 
   get 'user_controller/destroy'
