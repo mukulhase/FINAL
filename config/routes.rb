@@ -1,5 +1,33 @@
 Rails.application.routes.draw do
 
+  get 'user/new'
+
+  get 'user/create'
+
+  get 'user/update'
+
+  get 'user/edit'
+
+  get 'user/destroy'
+
+  get 'user/index'
+
+  get 'user/show'
+
+  get 'user_controller/new'
+
+  get 'user_controller/create'
+
+  get 'user_controller/update'
+
+  get 'user_controller/edit'
+
+  get 'user_controller/destroy'
+
+  get 'user_controller/index'
+
+  get 'user_controller/show'
+
   resources :projects
   scope '/api' do
     mount_devise_token_auth_for 'User', at: 'auth'
