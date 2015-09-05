@@ -25,6 +25,10 @@ config(['$routeProvider', function( $routeProvider, $stateProvider) {
                 templateUrl: 'user_index/user_index.html',
                 controller: 'UserIndex'
             })
+            .when('/project_index/:param1', {
+                templateUrl: 'project_index/project_index.html',
+                controller: 'ProjectIndex'
+            })
             .otherwise({
                 redirectTo: '/'
             });
