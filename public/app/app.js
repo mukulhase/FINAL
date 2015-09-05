@@ -7,7 +7,8 @@ angular.module('myApp', [
   'ng-token-auth',
   'myApp.signin',
   'myApp.signup',
-  'myApp.version'
+  'myApp.version',
+  'myApp.user_index'
 ]).
 config(['$routeProvider', function($routeProvider){
       $routeProvider
@@ -16,8 +17,12 @@ config(['$routeProvider', function($routeProvider){
         controller: 'Signin'
       })
       .when('/sign_up', {
-        templateUrl: 'signup/signup.html',
-        controller: 'Signup'
+          templateUrl: 'signup/signup.html',
+          controller: 'Signup'
+      })
+      .when('/user_index', {
+          templateUrl: 'user_index/user_index.html',
+          controller: 'UserIndex'
       })
       .otherwise({
         redirectTo: '/'
