@@ -25,6 +25,8 @@ config(['$routeProvider', function($routeProvider){
 }]).
 run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function() {
+        console.log($rootScope.user)
         $location.path('/');
+
     });
 }]);
