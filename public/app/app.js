@@ -31,8 +31,8 @@ config(['$routeProvider', function( $routeProvider, $stateProvider) {
     }]).
     run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function() {
-        console.log($rootScope.user)
-        $location.path('/');
+        console.log($rootScope.user);
+        $location.path('/user_index');
 
     });
 }]);
