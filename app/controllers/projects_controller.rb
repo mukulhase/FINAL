@@ -19,6 +19,14 @@ class ProjectsController < ApplicationController
     @project
   end
 
+  #Add new user to project
+  def add_user
+    @user = User.find(params[:user_id])
+    @project = Project.find(params[:id])
+    @project.users << @user
+    redirect_to projects_url
+  end
+
   # GET /projects/1/edit
   def edit
   end

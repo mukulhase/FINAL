@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get 'user_controller/show'
 
+
+  get '/projects/:id/add_user' => 'projects#add_user'
   resources :projects
   scope '/api' do
     mount_devise_token_auth_for 'User', at: 'auth'
