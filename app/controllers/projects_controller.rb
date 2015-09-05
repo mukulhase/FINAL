@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    @project
+    @project.owner_id = params[:user_id]
   end
 
   #Add new user to project
@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
+    @project = Project.new(owner_id: params[:owner_id], Name: params[:Name])
 
     respond_to do |format|
       if @project.save
@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     respond_to do |format|
-      if @project.update(project_params)
+      if @project.update(params[project_params])
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
