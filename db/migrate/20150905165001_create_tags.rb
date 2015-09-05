@@ -7,5 +7,9 @@ class CreateTags < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_column :projects, :Name, :string
+    add_column :projects, :Description, :text
+    add_column :projects, :owner_id, :integer
+    add_column :issues, :project_id, :integer
   end
 end
