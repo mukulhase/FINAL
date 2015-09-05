@@ -22,7 +22,7 @@ class UserController < ApplicationController
   end
 
   def index
-    @users = User.find(params[:id])
+    @users = User.all[0]
     render :json => @users.projects
   end
 
