@@ -38,7 +38,8 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(owner_id: params[:owner_id], Name: params[:Name])
-
+    @user = User.find(params[:owner_id])
+    @project.users << @user
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
