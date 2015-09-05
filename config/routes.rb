@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :tags
+  resources :comments
+  resources :issues
   get 'user/new'
 
   get 'user/create'
