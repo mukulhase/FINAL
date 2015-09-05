@@ -11,6 +11,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project = Project.find(params[:id])
+    render :json => @project.issues
   end
 
   # GET /projects/new
@@ -18,6 +20,7 @@ class ProjectsController < ApplicationController
     @project = Project.new
     @project.owner_id = params[:user_id]
   end
+
 
   #Add new user to project
   def add_user
