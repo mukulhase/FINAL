@@ -28,3 +28,10 @@
   content: "";
   padding: 0;
 }
+
+.masonry-brick {
+  border: solid #b1b1b1 !important;
+  background-color: beige !important;
+  padding: 1vh;
+  border-radius: 1vh;
+}
