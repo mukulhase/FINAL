@@ -1,8 +1,32 @@
 <div class="container">
-    <h1>HI BRUH</h1>
+    <h1>MA issue tracker</h1>
+    <h3>Welcome Back, {{user.email}}</h3>
     <input type="text" ng-model="newprojectname"/>
     <button ng-click="addProject()">Create Project</button>
-    <h3>Current Projects</h3>
-    <div masonry><div class="masonry-brick" ng-repeat="proj in projects"><table><tr><th >{{proj.Name}}</th></tr><tr><td>{{proj.Description}}</td></tr></table></div></div>
-    {{user.email}}
+    <h3>Current Projects <a type="button" class="btn btn-default btn-lg active btn-xs">Reload</a></h3>
+    <div masonry>
+        <div class="masonry-brick" ng-repeat="proj in projects">
+            <table>
+                <tr>
+                    <td>Project# {{proj.id}}</td>
+                    <td align="right">
+                        <button type="button" class="btn btn-default btn-lg active btn-xs" ng-click="removeProject(proj)">X</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{proj.Name}}</th>
+                </tr>
+                <tr>
+                    <td>{{proj.Description ? proj.Description : "New project, please add description"}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        Created At: {{proj.created_at}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
 </div>
