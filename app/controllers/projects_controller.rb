@@ -70,7 +70,7 @@ class ProjectsController < ApplicationController
     @user = User.find(params[:id])
     render :json => @user.projects
   end
-  
+
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
