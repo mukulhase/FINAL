@@ -26,7 +26,11 @@ Rails.application.routes.draw do
   get 'user_controller/update'
 
   get 'user/:id' => 'user#project_list'
+
   get 'project/:id' => 'project#project_list'
+
+  root to: redirect(path: '/app/')
+
   get 'user_controller/edit'
 
   get 'user_controller/destroy'

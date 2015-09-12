@@ -2,17 +2,18 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'wu.masonry',
-  'ipCookie',
-  'ngRoute',
-  'ng-token-auth',
-  'ngResource',
-  'myApp.signin',
-  'myApp.signup',
-  'myApp.version',
-  'myApp.user_index'
+    'wu.masonry',
+    'ipCookie',
+    'ngRoute',
+    'ng-token-auth',
+    'ngResource',
+    'myApp.signin',
+    'myApp.signup',
+    'myApp.version',
+    'myApp.project_index',
+    'myApp.user_index'
 ]).
-config(['$routeProvider', function( $routeProvider, $stateProvider) {
+    config(['$routeProvider', function ($routeProvider, $stateProvider) {
         $routeProvider
             .when('/sign_in', {
                 templateUrl: 'signin/signin.html',
@@ -34,10 +35,10 @@ config(['$routeProvider', function( $routeProvider, $stateProvider) {
                 redirectTo: '/'
             });
     }]).
-    run(['$rootScope', '$location', function($rootScope, $location) {
-    $rootScope.$on('auth:login-success', function() {
-        console.log($rootScope.user);
-        $location.path('/user_index');
+    run(['$rootScope', '$location', function ($rootScope, $location) {
+        $rootScope.$on('auth:login-success', function () {
+            console.log($rootScope.user);
+            $location.path('/user_index');
 
-    });
-}]);
+        });
+    }]);

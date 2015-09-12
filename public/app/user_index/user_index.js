@@ -48,11 +48,11 @@ angular.module('myApp.user_index', ['ngRoute'])
             var project = ProjectInstance.get({ID:id.id}, function() {
                 project.$delete();
             });
-            refresh();
-            /*$scope.projects.splice(
+
+            $scope.projects.splice(
                 index,
                 1
-            );*/
+            );
         };
         $scope.addProject = function() {
             var newproject = new Project({owner_id:$rootScope.user.id,Name:$scope.newprojectname});
