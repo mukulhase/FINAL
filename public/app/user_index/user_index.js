@@ -21,6 +21,9 @@ angular.module('myApp.user_index', ['ngRoute'])
                 }
             });
         }
+        function del(id){
+            Project.$delete();
+        }
         $scope.addProject = function() {
             var newproject = new Project({owner_id:$rootScope.user.id,Name:$scope.newprojectname});
             try{
