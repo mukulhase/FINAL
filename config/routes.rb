@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'user/show'
 
+  get 'user/confirm'
+
   get 'user_controller/new'
 
   get 'user_controller/create'

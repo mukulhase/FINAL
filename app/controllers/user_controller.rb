@@ -21,6 +21,11 @@ class UserController < ApplicationController
   def destroy
   end
 
+  def confirm
+    @users = User.find(params[:id])
+    @users.confirmed_at=Time.zone.now
+  end
+
   def index
     @users = User.all[0]
     render :json => @users.projects
