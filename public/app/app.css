@@ -28,7 +28,12 @@
   content: "";
   padding: 0;
 }
-
+.masonry-brick:hover {
+  background-color: darkorange !important;
+}
+.masonry-brick:active {
+  background-color: #adadad;
+}
 .masonry-brick {
   border: solid #b1b1b1 !important;
   background-color: beige !important;
