@@ -51,6 +51,13 @@ class IssuesController < ApplicationController
     end
   end
 
+
+  #Return list of projects
+  def comment_list
+    @issue = Issue.find(params[:id])
+    render :json => @issue.comments
+  end
+
   # DELETE /issues/1
   # DELETE /issues/1.json
   def destroy
@@ -61,6 +68,16 @@ class IssuesController < ApplicationController
     end
   end
 
+  def issue_list
+    @user = Project.find(params[:id])
+    render :json => @user.issues
+  end
+
+  def tags_list
+    @issue = Issue.find(params[:id])
+    render :json => @issue.tags
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_issue
@@ -69,6 +86,8 @@ class IssuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
-      params.require(:issue).permit(:Title, :Description, :Assignee)
+      params.require(:issue).permit(:Title, :Description, :Assignee, :project_id)
     end
+
+
 end

@@ -27,7 +27,9 @@ Rails.application.routes.draw do
 
   get 'user/:id' => 'user#project_list'
 
-  get 'project/:id' => 'project#project_list'
+  get 'projects/issue/:id' => 'issues#issue_list'
+
+  get 'issues/comment/:id' => 'issues#comment_list'
 
   root to: redirect(path: '/app/')
 

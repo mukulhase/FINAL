@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(owner_id: params[:owner_id], Name: params[:Name])
+    @project = Project.new(owner_id: params[:owner_id], Name: params[:Name], Description: params[:Description])
     @user = User.find(params[:owner_id])
     @project.users << @user
     respond_to do |format|
