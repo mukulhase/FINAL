@@ -11,7 +11,8 @@ angular.module('myApp', [
     'myApp.signup',
     'myApp.version',
     'myApp.project_index',
-    'myApp.user_index'
+    'myApp.user_index',
+    'myApp.issue_index'
 ]).
     config(['$routeProvider', function ($routeProvider, $stateProvider) {
         $routeProvider
@@ -30,6 +31,10 @@ angular.module('myApp', [
             .when('/project_index/:param1', {
                 templateUrl: 'project_index/project_index.html',
                 controller: 'ProjectIndex'
+            })
+            .when('/issue_index/:param1', {
+                templateUrl: 'issue_index/issue_index.html',
+                controller: 'IssueIndex'
             })
             .otherwise({
                 redirectTo: '/'

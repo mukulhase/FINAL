@@ -56,6 +56,7 @@ angular.module('myApp.user_index', ['ngRoute'])
         };
         $scope.addProject = function() {
             var newproject = new Project({owner_id:$rootScope.user.id,Name:$scope.newprojectname});
+            newproject.Description=$scope.projectDescription;
             try{
                 newproject.$save();
             }catch(error){
@@ -63,6 +64,7 @@ angular.module('myApp.user_index', ['ngRoute'])
             }
             refresh();
         };
+
         refresh();
         setInterval(refresh,5000);
 
