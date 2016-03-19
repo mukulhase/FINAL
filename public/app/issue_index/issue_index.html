@@ -1,6 +1,8 @@
 <div class="container">
     <h1>MA issue tracker</h1>
-    <h3>Issue Number {{IssueID}}</h3>
+    <h3>Issue Number {{issueID}}</h3>
+    <h2> {{issueTitle}} </h2>
+    Description: {{issueDescription}}
     <div class="form-group">
 
         <input type="text" placeholder = "Comment" ng-model="newcommentname"/>
@@ -10,11 +12,10 @@
     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
 
-    <h3>Current Issues <a type="button" class="btn btn-default btn-lg active btn-xs">Reload</a></h3>
+    <h3>Issue Comments <a type="button" class="btn btn-default btn-lg active btn-xs">Reload</a></h3>
     <div masonry>
         <div class="masonry-brick" ng-repeat="comment in comments track by $index">
-            <table>
-                <tr>
+            <table>                <tr>
                     <td>{{comment.Content}}</td>
                        <!-- <button type="button" class="btn btn-default btn-lg active btn-xs" ng-click="removeIssue(issue)">X</button>-->
                 </tr>
