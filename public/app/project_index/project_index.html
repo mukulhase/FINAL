@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>MA issue tracker</h1>
+    <h3>Project Number {{ProjectID}}</h3>
+    <div class="form-group">
+
+        <input type="text" placeholder = "Name" ng-model="newissuename"/>
+        <input type="text" class="form-control"  ng-model="issueDescription" placeholder="Description"/>
+
+        <button ng-click="addIssue()">Create Issue</button>
+    </div>
+
+
+    <h3>Current Issues <a type="button" class="btn btn-default btn-lg active btn-xs">Reload</a></h3>
+    <div masonry>
+        <div class="masonry-brick" ng-repeat="issue in issues track by $index">
+            <table>
+                <tr>
+                    <th><a ng-href="#/issue_index/{{issue.id}}">Issue ID#{{issue.id}}</a></th>
+                    <td align="right">
+                        Issued By#{{issue.Assignee}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{issue.Title}}</th>
+                </tr>
+                <tr>
+                    <td>{{issue.Description ? issue.Description : "New Issue, please add description"}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        Created At: {{issue.created_at}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</div>

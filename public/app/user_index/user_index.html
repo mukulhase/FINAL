@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>MA issue tracker</h1>
+    <h3>Welcome Back, {{user.email}}</h3>
+    <div class="form-group">
+        <input type="text" class="form-control"  ng-model="newprojectname" placeholder="Name"/>
+        <input type="text" class="form-control"  ng-model="projectDescription" placeholder="Description"/>
+        <button ng-click="addProject()" class="btn btn-default">Create Project</button>
+    </div>
+    <h3>Current Projects <a type="button" class="btn btn-default">Reload</a></h3>
+    <div masonry>
+        <div class="masonry-brick" ng-repeat="proj in projects" ng-href = "/project_index/1">
+            <table>
+                <tr>
+                    <td><a ng-href="#/project_index/{{proj.id}}"> Project# {{proj.id}}</a></td>
+                    <td align="right">
+                        <button type="button" class="glyphicon glyphicon-minus-sign" ng-click="removeProject(proj)"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{proj.Name}}</th>
+                </tr>
+                <tr>
+                    <td>{{proj.Description ? proj.Description : "New project, please add description"}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        Created At: {{proj.created_at}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</div>
